@@ -1,14 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <link href="style.css" rel="stylesheet">
-        <style>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="style.css" rel="stylesheet">
+      <style>
         :root{
             --accent_color: #C16069;
             --button_color: black;
         }
-        </style>
-        <script src="scripts/jquery-3.6.0.min.js"></script>
-        <title>Nord's paper template generator</title>
+      </style>
+      <script src="scripts/jquery-3.6.0.min.js"></script>
+      <title>Nord's paper template generator</title>
     </head>
     <body>
         <div class="panel">
@@ -21,11 +24,11 @@
                 <span class="cg_header">Result</span>
                 <div class="flex-h" style="justify-content: flex-start;">
                     <div class="button active" onclick="genPDF()">
-                        <img src="images/icon_pdf.svg" width="100%" height="70%">
+                        <img src="images/icon_pdf.svg" style="width:100%; height:70%" alt="">
                         <span>PDF</span>
                     </div>
                     <div class="button" onclick="exportConfig()">
-                        <img src="images/icon_json.svg" width="100%" height="70%">
+                        <img src="images/icon_json.svg" style="width:100%; height:70%" alt="">
                         <span>Config</span>
                     </div>
                 </div>
@@ -60,7 +63,7 @@
                         </svg>
                         <span>Line</span>
                     </div>
-                    
+
                     <div class="button pattern_btn" id="graph">
                         <svg width="100%" height="70%" stroke="black">
                                 <line x1="0" x2="150" y1="10" y2="10"></line>
@@ -92,7 +95,7 @@
                         <span>Cross</span>
                     </div>
                 </div>
-                
+
                 <div class="flex-h">
                     <span>Pattern spacing:</span>
                     <input type="range" min="5" max="100" value="10" class="slider" id="ctrl_pattern_dim" oninput="changePatternDim()">
@@ -168,12 +171,12 @@
                 </div>
 
             </div>
-            
+
         </div>
         <div id="paper">
             <div id="grid">
                 <!-- Dot grid -->
-                <svg id="grid_svg" width="595" height="842" currentscale="2">
+                <svg id="grid_svg" width="595" height="842">
                     <g id="pattern_wrapper"></g>
                     <rect id="grid_svg-grid" fill="url(#grid_svg_dots)" width="595" height="842"></rect>
 
@@ -195,9 +198,9 @@
         <div id="modal">
             <span class="cg_header">Config</span>
             <div onclick="closeModal()" style="cursor:pointer; position: absolute; top:5%; right:5%; font-weight: bold;">X</div>
-            <textarea id="config" readonly="true"></textarea>
+            <textarea id="config" readonly></textarea>
         </div>
     </div>
-        
+
     </body>
 </html>
